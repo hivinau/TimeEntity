@@ -1,0 +1,4 @@
+<project basedir="." default="build" name="TimeEntity">
+	
+	<target name="build"></target>
+</project>

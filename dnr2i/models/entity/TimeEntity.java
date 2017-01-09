@@ -11,22 +11,42 @@ package dnr2i.models.entity;
  */
 public abstract class TimeEntity {
 
-  public TimeEntity(){}
+    protected long startTime;
+    protected long endTime;
+    protected long currentTime;
 
-  /**Méthodes Abstrai sin implementación*/
-    public long setCurrentTime(long currentTime)
-    {
-      this.currentTime = currentTime;
+    public TimeEntity() {
     }
-    public long getStartTime()
-    {
-      return this.startTIme
-    }
-    public long getEndTime()
-    {
-    return this.endTime
-    }
-    public void createEvent(){}
 
+    //getter
+    public long getStartTime() {
+        return startTime;
+    }
+
+    public long getEndTime() {
+        return endTime;
+    }
+
+    public long getCurrentTime() {
+        return currentTime;
+    }
+    //setter
+
+    public void setStartTime(long startTime) {
+        this.startTime = startTime;
+    }
+
+    public void setEndTime(long endTime) {
+        this.endTime = endTime;
+    }
+
+    public void setCurrentTime(long currentTime) {
+        this.currentTime = currentTime;
+    }
+
+    /**
+     * Méthode Abstraite sans implementation
+     */
+    public abstract void createEvent();
 
 }

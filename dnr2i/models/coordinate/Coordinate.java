@@ -11,4 +11,12 @@ package dnr2i.models.coordinate;
  */
 public class Coordinate {
     
+    private double latitude;
+    private double longitude;
+    //private dateTrackpoint
+    
+    public Coordinate(){
+        
+    }
+    
 }

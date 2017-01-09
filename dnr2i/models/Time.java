@@ -10,7 +10,7 @@ public final class Time {
 	
 	private final StateTime defaultState;
 	private final StateTime synchronizedState;
-	private final StateTime currentState;
+	private StateTime currentState = null;
 	
 	public Time() {
 		

@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package src.dnr2i.models;
+package dnr2i.models;
 
 /**
  *
  * @author user
  */
-public class GPSEntity {
+public abstract class TimeEntity {
+    
+    
     
 }

@@ -8,9 +8,9 @@ public final class Time {
 
 	private final List<TimeEntity> entities;
 	
-	private StateTime defaultState = null;
-	private StateTime synchronizedState = null;
-	private StateTime currentState = null;
+	private final StateTime defaultState;
+	private final StateTime synchronizedState;
+	private final StateTime currentState;
 	
 	public Time() {
 		

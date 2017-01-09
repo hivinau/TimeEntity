@@ -2,31 +2,48 @@ package dnr2i.models;
 
 import java.util.*;
 import dnr2i.models.entity.*;
+import dnr2i.models.state.*;
 
 public final class Time {
 
 	private final List<TimeEntity> entities;
 	
+	private StateTime defaultState = null;
+	private StateTime synchronizedState = null;
+	private StateTime currentState = null;
+	
 	public Time() {
 		
 		entities = new ArrayList<>();
+		
+		defaultState = new DefaultStateTime(this);
+		synchronizedState = new SynchronizedStateTime(this);
+		
+		currentState = defaultState;
 	}
 	
-	public boolean add(TimeEntity entity) {
+	public void switchState(boolean sync) {
 		
-		boolean entityAdded = false;
-		if(!entities.contains(entity)) {
-			
-			entities.add(entity);
-			entityAdded = true;
-		}
+		currentState = sync ? synchronizedState : defaultState;
+	}
+	
+	public void add(TimeEntity entity) {
 		
-		return entityAdded;
+		entities.add(entity);
+		defaultState.add(entity);
+		synchronizedState.add(entity);
 	}
 	
 	public void remove(TimeEntity entity) {
 		
 		entities.remove(entity);
+		defaultState.remove(entity);
+		synchronizedState.remove(entity);
+	}
+	
+	public long getStart() {
+		
+		return currentState.getStart();
 	}
 }
 

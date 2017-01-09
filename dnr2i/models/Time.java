@@ -22,6 +22,11 @@ public final class Time {
 		currentState = defaultState;
 	}
 	
+	public List<TimeEntity> getEntities() {
+		
+		return entities;
+	}
+
 	public void switchState(boolean sync) {
 		
 		currentState = sync ? synchronizedState : defaultState;
@@ -44,6 +49,11 @@ public final class Time {
 	public long getStart() {
 		
 		return currentState.getStart();
+	}
+	
+	public long getEnd() {
+		
+		return currentState.getEnd();
 	}
 }
 

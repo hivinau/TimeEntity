@@ -30,6 +30,11 @@ public abstract class TimeEntity {
     public long getCurrentTime() {
         return currentTime;
     }
+    
+    public long duration() {
+    	
+    	return endTime - startTime;
+    }
     //setter
 
     public void setStartTime(long startTime) {

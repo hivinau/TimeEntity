@@ -23,5 +23,21 @@ public final class Time {
 		
 		return entityAdded;
 	}
+	
+	public void remove(TimeEntity entity) {
+		
+		int index = 0;
+		for(TimeEntity e : entities) {
+			
+			if(e.equals(entity)) {
+				
+				break;
+			}
+			
+			index++;
+		}
+		
+		entities.removeAt(index);
+	}
 }
 

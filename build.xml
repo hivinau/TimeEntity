@@ -1,7 +1,7 @@
 <project basedir="." default="build" name="TimeEntity">
 	
 	<property name="build_directory" value="bin"/>
-	<property name="src_directory" value="src"/>
+	<property name="src_directory" value="dnr2i"/>
 	<property name="generated_directory" value="${build_directory}/generated"/>
 	<property name="executable_name" value="distribution.jar"/>
     <property name="debug_level" value="source,lines,vars"/>
@@ -35,8 +35,7 @@
 	<target name="build" depends="clean, init">
 		<javac srcdir="${src_directory}" destdir="${generated_directory}" debug="true" includeantruntime="false"
 			debuglevel="${debug_level}" source="${source_compiler}" target="${target_compiler}" deprecation="true">
-			<src path="src"/>
-			<src path="tests"/>
+			<src path="${src_directory}"/>
 			<classpath refid="classpath"/>
 		</javac>
 	</target>
